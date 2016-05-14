@@ -1,2 +1,5 @@
 !
 使用键盘tab
+
+
+div.form-control 快捷键编写类名 ctrl+E
