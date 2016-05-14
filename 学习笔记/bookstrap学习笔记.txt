@@ -1,0 +1,142 @@
+<!--编码-->
+<meta charset="utf-8">
+
+<!--不支持IE-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!--手机模式-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+
+
+
+<!--兼容bootstrap模板为使IE6、7、8版本（IE9以下版本）浏览器兼容html5新增的标签，引入下面代码文件即可。-->
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+
+<!--兼容同理为使IE6、7、8版本浏览器兼容css3样式-->
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+<!--副标题-->
+<h1>Bootstrap标题一<small>我是副标题</small></h1>
+
+<!--强调内容-->
+<p class="lead"></p>
+
+<!--各种颜色效果-->
+.text-muted：提示，使用浅灰色（#999）
+.text-primary：主要，使用蓝色（#428bca）
+.text-success：成功，使用浅绿色(#3c763d)
+.text-info：通知信息，使用浅蓝色（#31708f）
+.text-warning：警告，使用黄色（#8a6d3b）
+.text-danger：危险，使用褐色（#a94442）
+
+<!--各种文字对齐-->
+.text-left：左对齐
+.text-center：居中对齐
+.text-right：右对齐
+.text-justify：两端对齐
+
+<!--各种列表-->
+无序列表
+<ul>
+    <li>…</li>
+</ul>
+有序列表
+<ol>
+    <li>…</li>
+</ol>
+定义列表
+<dl>
+    <dt>…</dt>
+    <dd>…</dd>
+</dl>
+内联列表
+描述列表
+水平描述列表
+
+<!--去除ul ol dd 默认风格-->
+<ul class="list-unstyled"></ul>
+
+<!--把垂直列表换成水平列表，而且去掉项目符号（编号），保持水平显示-->
+<ul class="list-inline"></ul>
+
+<!--dl-horizontal 只有屏幕大于768px的时候，添加类名“.dl-horizontal”才具有水平定义列表效果  ->
+<dl class="dl-horizontal">
+    <dt>W3cplus</dt>
+    <dd>一个致力于推广国内前端行业的技术博客。它以探索为己任，不断活跃在行业技术最前沿，努力提供高质量前端技术博文</dd>
+    <dt>慕课网</dt>
+    <dd>一个专业的，真心实意在做培训的网站</dd>
+    <dt>我来测试一个标题，我来测试一个标题</dt>
+    <dd>我在写一个水平定义列表的效果，我在写一个水平定义列表的效果</dd>
+</dl>
+
+
+<!--内嵌代码-->
+1、使用<code></code>来显示单行内联代码
+2、使用<pre></pre>来显示多行块代码
+3、使用<kbd></kbd>来显示用户输入代码
+
+<!--只需要在pre标签上添加类名“.pre-scrollable”，就可以控制代码块区域最大高度为340px，一旦超出这个高度，就会在Y轴出现滚动条-->
+<pre class="pre-scrollable">
+	<ol>
+	    <li>....</li>
+	    <li>....</li>
+	    <li>....</li>
+	    <li>....</li>
+	    <li>....</li>
+	    <li>....</li>
+	    <li>....</li>
+	    <li>....</li>
+	    <li>....</li>
+	    <li>....</li>
+	    <li>....</li>
+	    <li>....</li>
+	    <li>....</li>
+	    <li>....</li>
+	</ol>
+</pre>
+
+<!--表格table-->
+.table：基础表格
+.table-striped：斑马线表格
+.table-bordered：带边框的表格
+.table-hover：鼠标悬停高亮的表格
+.table-condensed：紧凑型表格
+.table-responsive：响应式表格
+
+<table class="table">
+   <thead>
+     <tr>
+       <th>表格标题</th>
+       <th>表格标题</th>
+       <th>表格标题</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+     </tr>
+     <tr>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+     </tr>
+   </tbody>
+ </table>
+
+<!--表格tr中的行为-->
+<tr class="active">
+    <td>…</td>
+</tr>
+.atcive  表示当前活动的信息
+.success 表示成功或者正确的行为
+.info    表示中立的信息或行为
+.warning 表示警告，需要特别注意
+.danger  表示危险或者可能是错误的行为
+
+<!--实现悬浮状态，需要在<table>标签上加入table-hover类-->
+<table class="table-hover">

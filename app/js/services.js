@@ -1,9 +1,1 @@
-var bookStoreServices = angular.module('bookStoreServices', []);
-
-bookStoreServices.service('bookStoreService_1', ['$scope',
-    function($scope) {}
-]);
-
-bookStoreServices.service('bookStoreService_2', ['$scope',
-    function($scope) {}
-]);
+//请尝试把BookListCtrl中加载书籍列表数据的部分抽出来作为一个服务
