@@ -7,45 +7,98 @@
 <style>
 	.ca{ text-align: center; te }
    html, body {
-                height: 100%;
-            }
+        height: 100%;
+    }
 
-            .body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
+    .body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: table;
+        font-weight: 100;
+        font-family: 'Lato';
+    }
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
+    .container {
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+    }
 
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
+    .content {
+        text-align: center;
+        display: inline-block;
+    }
 
-            .title {
-                font-size: 96px;
-            }
+    .title {
+        font-size: 15px;
+    }
 
 </style>
 <body>
 
-<body class="body" ng-app="myApp">
+<body class="body" ng-app="myApp" ng-init="names=[
+    {name:'俊佳',contry:'美国'},{name:'俊佳',contry:'美国'},
+    {name:'俊佳',contry:'美国'},{name:'俊佳',contry:'美国'}
+]
+">
+
+
+
+<ul>
+    <li ng-repeat="x in names"> 
+        {{ x.name + '-----' + x.contry }}
+    </li
+
+</ul>
+
+<ul  ng-controller="myCtrl">
+    <li ng-repeat="x in names">
+        {{ x.name + '-----' + x.contry }}
+    </li
+</ul>
+
+
+<ul>
+   <li ng-repeat="x in namess">
+       遍历对象 {{ x.name + '-----' + x.contry }}
+    </li
+</ul>
+
 
 
 <runoob-directive></runoob-directive>
-
 <runoob2-directive></runoob2-directive>
+
+<sigle></sigle>
+<div sigle></div>
+<div class="sigle">
+    
+
+</div>
+
+
+<!-- directive: style -->
+
+<div class="userlist"></div>
+
 
 <script>
 var app = angular.module("myApp", []);
+
+app.controller('myCtrl',function($scope){
+    $scope.names =[
+    {name:'俊佳1',contry:'美国'},{name:'俊佳',contry:'美国'},
+    {name:'俊佳2',contry:'美国'},{name:'俊佳',contry:'美国'}
+    ];
+
+     $scope.namess =[
+    {name:'俊佳1',contry:'美国'},{name:'俊佳',contry:'美国'},
+    {name:'俊佳2',contry:'美国'},{name:'俊佳',contry:'美国'}
+    ];
+});
+
+
 app.directive("runoobDirective", function() {
     return {
         template : "<div class='container'><div class='content'><div class='title'>自定义指令1!</div></div></div>"
@@ -57,6 +110,55 @@ app.directive("runoob2Directive", function() {
         template : "<div class='container'><div class='content'><div class='title'>自定义指令2!</div></div></div>"
     };
 });
+
+/*
+E 只限元素名使用
+A 只限属性使用
+C 只限类名使用
+M 只限注释使用
+*/
+
+app.directive('userlist',function(){
+    return {
+        restrict : 'C',
+        template:"<h2>好哒</h2>"
+    }
+
+});
+
+
+app.directive("sigle",function() {
+    return {
+        restrict : "E",
+        template:"<div class='container'><div class='content'><div class='title'>sigle - E</div></div></div>"
+    };
+});
+
+
+app.directive("sigle",function() {
+    return {
+        restrict : "A",
+        template:"<div class='container'><div class='content'><div class='title'>sigle -A</div></div></div>"
+    };
+});
+
+
+app.directive("sigle",function() {
+    return {
+        restrict : "C",
+        template:"<div class='container'><div class='content'><div class='title'>sigle - C</div></div></div>"
+    };
+});
+
+
+app.directive("style",function() {
+    return {
+        restrict : "M",
+        replace : true,
+        template:"<div class='container'><div class='content'><div class='title'>sigle - M</div></div></div>"
+    };
+});
+
 
 </script>
 

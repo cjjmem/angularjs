@@ -22,11 +22,12 @@
 	  </div>
 
       
-    <script src="angular.min.js"></script>
+   <script src="angular.min.js"></script>
       
 	<script>
+
 		var testApp = angular.module("testApp",[]);
-		
+
 		testApp.config(function($provide){
 			$provide.provider('MathService',function(){
 				this.$get = function(){
@@ -38,9 +39,6 @@
 				};	
 			});	
 		});
-
-
-
 
 		testApp.value("defaultInput",'6');
 
@@ -56,67 +54,62 @@
 			this.square = function(a){
 				return MathService.multiply(a,a);
 			}
-
 		});
 
-		 testApp.controller('textController', function($scope, CalcService, defaultInput) {
-            $scope.number = defaultInput;
+		testApp.controller('textController', function($scope, CalcService, defaultInput) {
+         $scope.number = defaultInput;
+         $scope.result = CalcService.square($scope.number);
+         $scope.square = function() {
             $scope.result = CalcService.square($scope.number);
-
-            $scope.square = function() {
-               $scope.result = CalcService.square($scope.number);
-            }
-         });
-
-
-
+         }
+      });
 
 	</script>
 
 
-      <script>
-         var mainApp = angular.module("mainApp", []);
-         
-         mainApp.config(function($provide) {
-            $provide.provider('MathService', function() {
-               this.$get = function() {
-                  var factory = {};
-                  
-                  factory.multiply = function(a, b) {
-                     return a * b;
-                  }
-                  return factory;
-               };
-            });
+   <script>
+      var mainApp = angular.module("mainApp", []);
+      
+      mainApp.config(function($provide) {
+         $provide.provider('MathService', function() {
+            this.$get = function() {
+               var factory = {};
+               
+               factory.multiply = function(a, b) {
+                  return a * b;
+               }
+               return factory;
+            };
          });
-			
-         mainApp.value("defaultInput", 5);
+      });
+		
+      mainApp.value("defaultInput", 5);
+      
+      mainApp.factory('MathService', function() {
+         var factory = {};
          
-         mainApp.factory('MathService', function() {
-            var factory = {};
-            
-            factory.multiply = function(a, b) {
-               return a * b;
-            }
-            return factory;
-         });
-         
-         mainApp.service('CalcService', function(MathService){
-            this.square = function(a) {
-               return MathService.multiply(a,a);
-            }
-         });
-         
-         mainApp.controller('CalcController', function($scope, CalcService, defaultInput) {
-            $scope.number = defaultInput;
-            $scope.result = CalcService.square($scope.number);
+         factory.multiply = function(a, b) {
+            return a * b;
+         }
+         return factory;
+      });
+      
+      mainApp.service('CalcService', function(MathService){
+         this.square = function(a) {
+            return MathService.multiply(a,a);
+         }
+      });
+      
+      mainApp.controller('CalcController', function($scope, CalcService, defaultInput) {
+         $scope.number = defaultInput;
+         $scope.result = CalcService.square($scope.number);
 
-            $scope.square = function() {
-               $scope.result = CalcService.square($scope.number);
-            }
-         });
-			
-      </script>
+         $scope.square = function() {
+            $scope.result = CalcService.square($scope.number);
+         }
+      });
+		
+   </script>
       
    </body>
 </html>
