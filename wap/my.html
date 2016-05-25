@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport"  content="width=device-width,user-scalable=no">
+<link href="style/default.css" rel="stylesheet" type="text/css">
+<title>首页</title>
+</head>
+<body class="color">
+<div class="top">我的资料</div>
+<div class="my">
+  <div class="r2"><a href="edit.html"></a></div>
+  <div class="my_l"><img src="images/user1.png" width="89" height="90"></div>
+  <div class="my_c">
+    <p class="c1">李某某</p>
+    <p class="c2">会员号：005540</p>
+  </div>
+  <div class="my_r">
+    <div class="r1">编辑资料</div>
+  </div>
+</div>
+<div class="list">
+  <ul>
+    <li>
+      <div class="right_user">10位好友</div>
+      <a href="#">我的好友</a></li>
+    <li> <a href="#">我的活动</a></li>
+        <li> <a href="#">名片分享</a></li>
+
+    <li> <a href="#">邀请好友加入</a></li>
+    <li> <a href="set_up.html">系统设置</a></li>
+    <li> <a href="#">使用指南</a></li>
+    <li> <a href="#">用户协议</a></li>
+
+  </ul>
+</div>
+<div class="quit"><a href="javascript:showDiv()">退出登录</a></div>
+<div style=" height:110px"></div>
+<div class="nav">
+  <div class="n1"><a href="index.html">首页</a></div>
+  <div class="n2"><a href="#">商脉</a></div>
+  <div class="n3"><a href="#">活动</a></div>
+  <div class="n4"><a href="#">学习</a></div>
+  <div class="n5_h"><a href="my.html">我</a></div>
+</div>
+
+
+
+
+
+
+
+<div id="popDiv" class="mydiv" style="display:none">
+  <div class="pop_top">退出登录</div>
+    <div class="pop_txt"><p>你已登录，点“退出“则退出
+</p><p> 登录状态。</p></div>
+<div class="pop_box">
+<div class="pop_btn1"><a href="javascript:closeDiv()">取消</a></div>
+<div class="pop_btn2"><a href="javascript:closeDiv()">退出</a></div>
+
+</div>
+  </div>
+  
+  
+  
+  
+ 
+
+
+
+
+
+<div id="bg" class="bg" style="display:none;"></div>
+<iframe id='popIframe' class='popIframe' frameborder='0' ></iframe>
+<script>
+function showDiv(){
+document.getElementById('popDiv').style.display='block';
+document.getElementById('popIframe').style.display='block';
+document.getElementById('bg').style.display='block';
+}
+function closeDiv(){
+document.getElementById('popDiv').style.display='none';
+document.getElementById('bg').style.display='none';
+document.getElementById('popIframe').style.display='none';
+
+}
+</script>
+
+
+
+
+
+
+</body>
+</html>
